@@ -130,7 +130,7 @@ print(head(liverpool_spatial))
 library(ggplot2)
 
 # Create a basic spatial plot of Liverpool's event density
-ggplot(liverpool_spatial, aes(x = x, y = y)) +
+lfc_density_plot <- ggplot(liverpool_spatial, aes(x = x, y = y)) +
   # Draw pitch boundaries
   annotate("rect", xmin = 0, xmax = 120, ymin = 0, ymax = 80, 
            fill = "NA", color = "black", size = 1) +
@@ -296,4 +296,4 @@ print(p2)
 # Save plots
 ggsave("cluster_timeline.png", plot = p1, width = 8.5, height = 5.5, dpi = 300)
 ggsave("cluster_footprint.png", plot = p2, width = 8.5, height = 5.5, dpi = 300)
-
+ggsave("lfc_density_plot.png", plot = lfc_density_plot, width = 8.5, height = 5.5, dpi = 300)
